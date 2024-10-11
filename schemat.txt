@@ -1,0 +1,10 @@
+chevy ->
+-model - lata produkcji - dodatkowe wyposarzenie(zalezne od rocznika)
+-rocznik
+- naped
+-silnik - mod - pojemnosc skokowa
+-vin
+-typ nadwozia
+-rodzaj paliwa
+-skrzynia biegow
+
