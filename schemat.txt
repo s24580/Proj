@@ -7,4 +7,20 @@ chevy ->
 -typ nadwozia
 -rodzaj paliwa
 -skrzynia biegow
+get/get/post/delete/put/patch
 
+
+Model
+├── name
+└── productionYears
+    ├── year
+    ├── features
+    ├── bodyTypes
+    ├── driveTypes
+    ├── transmissions
+    └── engines
+        ├── model
+        ├── displacement
+        ├── horsepower
+        └── fuelType
+        
