@@ -1,21 +1,25 @@
-import express from 'express';
-import {faker } from '@faker-js/faker';
+import express from "express";
+import carsRoutes from "./routes/cars.js";
+import dealershipsRoutes from "./routes/dealerships.js";
+import servicesRoutes from "./routes/services.js";
 
-const app = new express();
+const app = express();
+app.use(express.json());
 
-/* API CHEVROLET 
-min 5 - statusow i metod
-3 poziomy zagniezdenia
-
-*/ 
-
-app.get('/:id', (req,res) => {
-    faker.seed(Number(req.params.id));
-    const randomName = faker.person.fullName();
-  res.send(randomName);
+// Middleware do nagłówków CORS
+app.use((req, res, next) => {
+  res.setHeader("Content-Type", "application/json");
+  res.setHeader("Cache-Control", "no-cache");
+  res.setHeader("Access-Control-Allow-Origin", "*");
+  next();
 });
 
-app.listen(8989, ()=> {
-    console.log("started on 8989");
-});
+// routes
+app.use("/cars", carsRoutes);
+app.use("/dealerships", dealershipsRoutes);
+app.use("/services", servicesRoutes);
 
+// Uruchomienie serwera
+app.listen(3000, () => {
+  console.log("Serwer Chevrolet API działa na porcie 3000");
+});
