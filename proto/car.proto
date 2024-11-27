@@ -1,0 +1,66 @@
+syntax = "proto3";
+
+package carservice;
+
+// Definicja wiadomości Car
+message Car {
+  int32 id = 1;
+  string vin = 2;
+  string model = 3;
+  int32 year = 4;
+  double price = 5;
+  repeated string features = 6;
+  int32 manufacturer = 7;
+}
+
+// Definicja wiadomości CarId
+message CarId {
+  int32 id = 1;
+}
+
+// Definicja wiadomości CarFilter
+message CarFilter {
+  string model_eq = 1;
+  string model_contains = 2;
+  string model_neq = 3;
+  string model_notContains = 4;
+
+  int32 year_eq = 5;
+  int32 year_gt = 6;
+  int32 year_lt = 7;
+  int32 year_gte = 8;
+  int32 year_lte = 9;
+
+  double price_eq = 10;
+  double price_gt = 11;
+  double price_lt = 12;
+  double price_gte = 13;
+  double price_lte = 14;
+}
+
+// Definicja wiadomości CarRequest
+message CarRequest {
+  CarFilter filter = 1;
+  int32 limit = 2;
+  int32 offset = 3;
+  string sortBy = 4;
+  string sortOrder = 5;
+}
+
+// Definicja wiadomości CarResponse
+message CarResponse {
+  repeated Car cars = 1;
+}
+
+// Definicja wiadomości UpdateCarRequest
+message UpdateCarRequest {
+  int32 id = 1;
+  Car car = 2;
+}
+
+// Definicja wiadomości DeleteResponse
+message DeleteResponse {
+  bool success = 1;
+  string message = 2;
+  string code = 3;
+}

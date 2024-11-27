@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+package carservice;
+
+import "car.proto";
+import "manufacturer.proto";
+
+service CarService {
+  rpc GetCars(CarRequest) returns (CarResponse);
+  rpc GetCar(CarId) returns (Car);
+  rpc CreateCar(Car) returns (Car);
+  rpc UpdateCar(UpdateCarRequest) returns (Car);
+  rpc DeleteCar(CarId) returns (DeleteResponse);
+}
+
+// service ManufacturerService {
+//   rpc GetManufacturers(ManufacturerRequest) returns (ManufacturerResponse);
+//   rpc GetManufacturer(ManufacturerId) returns (Manufacturer);
+//   rpc CreateManufacturer(Manufacturer) returns (Manufacturer);
+//   rpc UpdateManufacturer(UpdateManufacturerRequest) returns (Manufacturer);
+//   rpc DeleteManufacturer(ManufacturerId) returns (DeleteResponse);
+// }

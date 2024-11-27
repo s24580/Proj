@@ -1,67 +1,173 @@
-//standard query
-query {
-  cars {
-    id
-    vin
-    model
-    year
-    price
-    features
-    manufacturer
+Cars: [
+  {
+    features: [ 'Sport Package', 'Leather Seats' ],
+    id: 1,
+    vin: '1G1YY26U365123456',
+    model: 'Corvette',
+    year: 2019,
+    price: 55000,
+    manufacturer: 1
+  },
+  {
+    features: [ 'Convertible', 'Bluetooth' ],
+    id: 2,
+    vin: '1HGCM82633A004352',
+    model: 'Camaro',
+    year: 2021,
+    price: 35000,
+    manufacturer: 1
+  },
+  {
+    features: [ '4x4', 'Tow Package' ],
+    id: 3,
+    vin: '1FAFP404X1F123456',
+    model: 'Silverado',
+    year: 2020,
+    price: 40000,
+    manufacturer: 1
+  },
+  {
+    features: [ 'Cruise Control', 'Backup Camera' ],
+    id: 4,
+    vin: '1N4AL11D75C123456',
+    model: 'Malibu',
+    year: 2018,
+    price: 22000,
+    manufacturer: 1
+  },
+  {
+    features: [ 'All-Wheel Drive', 'Heated Seats' ],
+    id: 5,
+    vin: '1FTSW21P07E123456',
+    model: 'Equinox',
+    year: 2022,
+    price: 28000,
+    manufacturer: 1
   }
+]
+Fetched Car: {
+  features: [ 'Sport Package', 'Leather Seats' ],
+  id: 1,
+  vin: '1G1YY26U365123456',
+  model: 'Corvette',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
 }
-
-query {
-  car(id: 2) {
-    id
-    vin
-    model
-    year
-    price
-    features
-    manufacturer
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
   }
+]
+Fetched Car: {
+  features: [ 'Sport Package', 'Leather Seats' ],
+  id: 1,
+  vin: '1G1YY26U365123456',
+  model: 'Corvette',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
 }
-
-//mutation
-mutation {
-  createCar(
-    carInput: {
-      vin: "2FTRX18W1XCA12345"
-      model: "Tahoe"
-      year: 2022
-      price: 50000.0
-      features: ["Navigation", "Sunroof"]
-      manufacturer: 1
-    }
-  ) {
-    id
-    vin
-    model
-    year
-    price
-  }
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
+]
+Fetched Car: {
+  features: [ 'Sport Package', 'Leather Seats' ],
+  id: 1,
+  vin: '1G1YY26U365123456',
+  model: 'Corvette',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
 }
-
-//sorting 3 ex
-query {
-  cars(sortBy: price, sortOrder: DESC) {
-    id
-    model
-    price
-  }
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro',
+  year: 2021,
+  price: 35000,
+  manufacturer: 1
 }
-query {
-  cars(sortBy: year, sortOrder: ASC) {
-    id
-    model
-    year
-  }
+Fetched Car: {
+  features: [ 'Sport Package', 'Leather Seats' ],
+  id: 1,
+  vin: '1G1YY26U365123456',
+  model: 'Corvette',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
 }
-query {
-  cars(sortBy: model) {
-    id
-    model
-    year
-  }
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro',
+  year: 2021,
+  price: 35000,
+  manufacturer: 1
 }
+  id: 1,
+  vin: '1G1YY26U365123456',
+  model: 'Corvette',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
+}
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro',
+  year: 2021,
+  price: 35000,
+  manufacturer: 1
+}
+Updated Car: {
+  features: [ 'Convertible', 'Bluetooth', 'Performance Package' ],
+  id: 1,
+  vin: '1HGCM82633A004352',
+  year: 2019,
+  price: 55000,
+  manufacturer: 1
+}
+Created Car: {
+  features: [ 'Convertible', 'Bluetooth' ],
+  id: 6,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro',
+  year: 2021,
+  price: 35000,
+  manufacturer: 1
+}
+Updated Car: {
+  features: [ 'Convertible', 'Bluetooth', 'Performance Package' ],
+  id: 1,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro',
+  year: 2021,
+  price: 35000,
+  manufacturer: 1
+}
+Updated Car: {
+  features: [ 'Convertible', 'Bluetooth', 'Performance Package' ],
+  id: 1,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro SS',
+  year: 2021,
+Updated Car: {
+  features: [ 'Convertible', 'Bluetooth', 'Performance Package' ],
+  id: 1,
+  vin: '1HGCM82633A004352',
+  model: 'Camaro SS',
+  year: 2021,
+  model: 'Camaro SS',
+  year: 2021,
+  price: 37000,
+  price: 37000,
+  manufacturer: 1
+}
+Delete Response: { success: true, message: 'Deleted', code: 'SUCCESS' }

@@ -1,0 +1,27 @@
+syntax = "proto3";
+
+package carservice;
+
+message Manufacturer {
+  int32 id = 1;
+  string name = 2;
+  string country = 3;
+  int32 foundedYear = 4;
+}
+
+message ManufacturerId {
+  int32 id = 1;
+}
+
+message ManufacturerRequest {
+  // Dodaj pola filtrowania, jeśli są potrzebne
+}
+
+message ManufacturerResponse {
+  repeated Manufacturer manufacturers = 1;
+}
+
+message UpdateManufacturerRequest {
+  int32 id = 1;
+  Manufacturer manufacturer = 2;
+}

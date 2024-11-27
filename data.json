@@ -1,21 +1,15 @@
 {
   "cars": [
     {
-      "id": 1,
-      "vin": "1G1YY26U365123456",
-      "model": "Corvette",
-      "year": 2019,
-      "price": 55000.0,
-      "features": ["Sport Package", "Leather Seats"],
-      "manufacturer": 1
-    },
-    {
       "id": 2,
       "vin": "1HGCM82633A004352",
       "model": "Camaro",
       "year": 2021,
-      "price": 35000.0,
-      "features": ["Convertible", "Bluetooth"],
+      "price": 35000,
+      "features": [
+        "Convertible",
+        "Bluetooth"
+      ],
       "manufacturer": 1
     },
     {
@@ -23,8 +17,11 @@
       "vin": "1FAFP404X1F123456",
       "model": "Silverado",
       "year": 2020,
-      "price": 40000.0,
-      "features": ["4x4", "Tow Package"],
+      "price": 40000,
+      "features": [
+        "4x4",
+        "Tow Package"
+      ],
       "manufacturer": 1
     },
     {
@@ -32,8 +29,11 @@
       "vin": "1N4AL11D75C123456",
       "model": "Malibu",
       "year": 2018,
-      "price": 22000.0,
-      "features": ["Cruise Control", "Backup Camera"],
+      "price": 22000,
+      "features": [
+        "Cruise Control",
+        "Backup Camera"
+      ],
       "manufacturer": 1
     },
     {
@@ -41,8 +41,23 @@
       "vin": "1FTSW21P07E123456",
       "model": "Equinox",
       "year": 2022,
-      "price": 28000.0,
-      "features": ["All-Wheel Drive", "Heated Seats"],
+      "price": 28000,
+      "features": [
+        "All-Wheel Drive",
+        "Heated Seats"
+      ],
+      "manufacturer": 1
+    },
+    {
+      "features": [
+        "Convertible",
+        "Bluetooth"
+      ],
+      "id": 6,
+      "vin": "1HGCM82633A004352",
+      "model": "Camaro",
+      "year": 2021,
+      "price": 35000,
       "manufacturer": 1
     }
   ],
@@ -52,7 +67,13 @@
       "name": "Chevrolet",
       "country": "USA",
       "foundedYear": 1911,
-      "cars": [1, 2, 3, 4, 5]
+      "cars": [
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     }
   ]
 }
