@@ -1,25 +1,22 @@
 import express from "express";
-import carsRoutes from "./routes/cars.js";
-import dealershipsRoutes from "./routes/dealerships.js";
-import servicesRoutes from "./routes/services.js";
+import cors from "cors";
+import { ApolloServer } from "@apollo/server";
+import { expressMiddleware } from "@apollo/server/express4";
+import { typeDefs } from "./schema.js";
+import { resolvers } from "./resolvers.js";
 
 const app = express();
-app.use(express.json());
+const port = 4000;
 
-// Middleware do nagłówków CORS
-app.use((req, res, next) => {
-  res.setHeader("Content-Type", "application/json");
-  res.setHeader("Cache-Control", "no-cache");
-  res.setHeader("Access-Control-Allow-Origin", "*");
-  next();
+const server = new ApolloServer({
+  typeDefs,
+  resolvers,
 });
 
-// routes
-app.use("/cars", carsRoutes);
-app.use("/dealerships", dealershipsRoutes);
-app.use("/services", servicesRoutes);
+await server.start();
 
-// Uruchomienie serwera
-app.listen(3000, () => {
-  console.log("Serwer Chevrolet API działa na porcie 3000");
+app.use("/graphql", cors(), express.json(), expressMiddleware(server));
+
+app.listen(port, () => {
+  console.log(`Server listening on http://localhost:${port}/graphql`);
 });

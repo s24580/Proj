@@ -1,98 +1,58 @@
 {
   "cars": [
     {
-      "id": "1",
-      "model": "Chevrolet Malibu",
-      "year": 2020,
-      "features": ["Bluetooth", "Cruise Control"]
-    },
-    {
-      "id": "2",
-      "model": "Chevrolet Camaro",
-      "year": 2021,
-      "features": ["Sport Package", "Heated Seats"]
-    },
-    {
-      "id": "3",
-      "model": "Chevrolet Equinox",
+      "id": 1,
+      "vin": "1G1YY26U365123456",
+      "model": "Corvette",
       "year": 2019,
-      "features": ["Navigation", "Leather Seats"]
+      "price": 55000.0,
+      "features": ["Sport Package", "Leather Seats"],
+      "manufacturer": 1
     },
     {
-      "id": "4",
-      "model": "Chevrolet Tahoe",
-      "year": 2022,
-      "features": ["All-Wheel Drive", "Sunroof"]
-    },
-    {
-      "id": "5",
-      "model": "Chevrolet Suburban",
-      "year": 2023,
-      "features": ["Third-Row Seating", "Rear Entertainment"]
-    },
-    {
-      "id": "6",
-      "model": "Chevrolet Bolt EV",
-      "year": 2022,
-      "features": ["Electric", "Fast Charging"]
-    },
-    {
-      "id": "7",
-      "model": "Chevrolet Silverado",
+      "id": 2,
+      "vin": "1HGCM82633A004352",
+      "model": "Camaro",
       "year": 2021,
-      "features": ["Tow Package", "Bed Liner"]
+      "price": 35000.0,
+      "features": ["Convertible", "Bluetooth"],
+      "manufacturer": 1
     },
     {
-      "id": "8",
-      "model": "Chevrolet Blazer",
+      "id": 3,
+      "vin": "1FAFP404X1F123456",
+      "model": "Silverado",
       "year": 2020,
-      "features": ["Blind Spot Monitoring", "Apple CarPlay"]
+      "price": 40000.0,
+      "features": ["4x4", "Tow Package"],
+      "manufacturer": 1
+    },
+    {
+      "id": 4,
+      "vin": "1N4AL11D75C123456",
+      "model": "Malibu",
+      "year": 2018,
+      "price": 22000.0,
+      "features": ["Cruise Control", "Backup Camera"],
+      "manufacturer": 1
+    },
+    {
+      "id": 5,
+      "vin": "1FTSW21P07E123456",
+      "model": "Equinox",
+      "year": 2022,
+      "price": 28000.0,
+      "features": ["All-Wheel Drive", "Heated Seats"],
+      "manufacturer": 1
     }
   ],
-  "dealerships": [
+  "manufacturers": [
     {
-      "id": "1",
-      "name": "Chevrolet City",
-      "location": "New York",
-      "cars": ["1", "2", "3"]
-    },
-    {
-      "id": "2",
-      "name": "Chevy Center",
-      "location": "Los Angeles",
-      "cars": ["4", "5", "6"]
-    },
-    {
-      "id": "3",
-      "name": "AutoNation Chevrolet",
-      "location": "Chicago",
-      "cars": ["7", "8"]
-    },
-    {
-      "id": "4",
-      "name": "Downtown Chevy",
-      "location": "Houston",
-      "cars": ["1", "4", "7"]
-    },
-    {
-      "id": "5",
-      "name": "Suburban Chevrolet",
-      "location": "Miami",
-      "cars": ["2", "3", "5", "6"]
+      "id": 1,
+      "name": "Chevrolet",
+      "country": "USA",
+      "foundedYear": 1911,
+      "cars": [1, 2, 3, 4, 5]
     }
-  ],
-  "services": [
-    { "id": "1", "name": "Oil Change", "cars": ["1", "2", "3", "4"] },
-    { "id": "2", "name": "Tire Rotation", "cars": ["2", "3", "5", "6", "7"] },
-    { "id": "3", "name": "Battery Replacement", "cars": ["6", "7", "8"] },
-    {
-      "id": "4",
-      "name": "Brake Inspection",
-      "cars": ["1", "3", "5", "7", "8"]
-    },
-    { "id": "5", "name": "Transmission Repair", "cars": ["2", "4", "6", "8"] },
-    { "id": "6", "name": "Alignment Check", "cars": ["1", "3", "6"] },
-    { "id": "7", "name": "Engine Tune-Up", "cars": ["4", "5", "7"] },
-    { "id": "8", "name": "AC Service", "cars": ["2", "5", "8"] }
   ]
 }

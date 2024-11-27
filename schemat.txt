@@ -1,95 +1,67 @@
-chevy ->
--model - lata produkcji - dodatkowe wyposarzenie(zalezne od rocznika)
--rocznik
-- naped
--silnik - mod - pojemnosc skokowa
--vin
--typ nadwozia
--rodzaj paliwa
--skrzynia biegow
-get/get/post/delete/put/patch
+//standard query
+query {
+  cars {
+    id
+    vin
+    model
+    year
+    price
+    features
+    manufacturer
+  }
+}
 
+query {
+  car(id: 2) {
+    id
+    vin
+    model
+    year
+    price
+    features
+    manufacturer
+  }
+}
 
-Model
-├── name
-└── productionYears
-    ├── year
-    ├── features
-    ├── bodyTypes
-    ├── driveTypes
-    ├── transmissions
-    └── engines
-        ├── model
-        ├── displacement
-        ├── horsepower
-        └── fuelType
-Endpoints:
+//mutation
+mutation {
+  createCar(
+    carInput: {
+      vin: "2FTRX18W1XCA12345"
+      model: "Tahoe"
+      year: 2022
+      price: 50000.0
+      features: ["Navigation", "Sunroof"]
+      manufacturer: 1
+    }
+  ) {
+    id
+    vin
+    model
+    year
+    price
+  }
+}
 
-    Models:
-        GET /models
-        GET /models/{modelId}
-        POST /models
-        PUT /models/{modelId}
-        DELETE /models/{modelId}
-
-    Production Years:
-        GET /models/{modelId}/productionYears
-        GET /models/{modelId}/productionYears/{yearId}
-        POST /models/{modelId}/productionYears
-        PUT /models/{modelId}/productionYears/{yearId}
-        DELETE /models/{modelId}/productionYears/{yearId}
-    
-    Engines:
-        GET /models/{modelId}/productionYears/{yearId}/engines
-        GET /models/{modelId}/productionYears/{yearId}/engines/{engineId}
-        POST /models/{modelId}/productionYears/{yearId}/engines
-        PUT /models/{modelId}/productionYears/{yearId}/engines/{engineId}
-        DELETE /models/{modelId}/productionYears/{yearId}/engines/{engineId}
-
--------------------^SCRAPED^-------------------------------------------------
-                    NEW V.2
-
-201 Created: Przy tworzeniu nowego zasobu (POST).
-400 Bad Request: Przy braku wymaganych pól podczas tworzenia nowego zasobu (POST).
-404 Not Found: Jeśli żądany zasób nie istnieje.
-422 Unprocessable Entity: Gdy dane do aktualizacji są nieprawidłowe.
-204 No Content: Zwracany po pomyślnym usunięciu zasobu (DELETE).
-500 Internal Server Error: Dla błędów serwera obsługiwanych przez middleware błędów.
-
-ChevroletAPI/
-├── app.js               
-├── data.json            # Plik z bazą
-├── package.json         
-├── routes/              
-│   ├── cars.js          # Ruty dla zasobu "Cars" (samochody)
-│   ├── dealerships.js   # Ruty dla zasobu "Dealerships" (salony)
-│   └── services.js      # Ruty dla zasobu "Services" (usługi)
-└── test/                # Folder z testami (opcjonalnie) - TBA - aktalnie nie
-    └── api.test.js  
-
-
-
-1.Cars (Samochody)
-    GET /cars - Pobiera listę wszystkich samochodów.
-    POST /cars - Tworzy nowy samochód. Wymagane pola: id, model, year.
-    GET /cars/:carId - Pobiera szczegóły konkretnego samochodu o ID carId.
-    PUT /cars/:carId - Aktualizuje dane samochodu o ID carId. Wymagane pola: model, year.
-    DELETE /cars/:carId - Usuwa samochód o ID carId.
-    GET /cars/:carId/features - Pobiera listę funkcji konkretnego samochodu o ID carId.
-    POST /cars/:carId/features - Dodaje nową funkcję do samochodu o ID carId.
-
-2. Dealerships (Salony)
-    GET /dealerships - Pobiera listę wszystkich salonów.
-    POST /dealerships - Tworzy nowy salon. Wymagane pola: id, name, location.
-    GET /dealerships/:dealershipId - Pobiera szczegóły salonu o ID dealershipId.
-    PUT /dealerships/:dealershipId - Aktualizuje dane salonu o ID dealershipId. Wymagane pola: name, location.
-    DELETE /dealerships/:dealershipId - Usuwa salon o ID dealershipId.
-    GET /dealerships/:dealershipId/cars - Pobiera listę samochodów dostępnych w salonie o ID dealershipId.
-
-3. Services (Usługi)
-    GET /services - Pobiera listę wszystkich usług.
-    POST /services - Tworzy nową usługę. Wymagane pola: id, name.
-    GET /services/:serviceId - Pobiera szczegóły usługi o ID serviceId.
-    PUT /services/:serviceId - Aktualizuje dane usługi o ID serviceId. Wymagane pole: name.
-    DELETE /services/:serviceId - Usuwa usługę o ID serviceId.
-    GET /services/:serviceId/cars - Pobiera listę samochodów powiązanych z usługą o ID serviceId.
+//sorting 3 ex
+query {
+  cars(sortBy: price, sortOrder: DESC) {
+    id
+    model
+    price
+  }
+}
+query {
+  cars(sortBy: year, sortOrder: ASC) {
+    id
+    model
+    year
+  }
+}
+query {
+  cars(sortBy: model) {
+    id
+    model
+    year
+  }
+}
