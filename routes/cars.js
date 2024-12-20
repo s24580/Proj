@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.status(200).json({
     cars: data.cars,
-    links: [{ rel: "self", href: "/cars" }],
+    links: [{ rel: "self",method:"GET" href: "/cars" }],
   });
 });
 
@@ -26,7 +26,7 @@ router.post("/", (req, res) => {
   data.cars.push(newCar);
   res.status(201).json({
     message: "Car created successfully",
-    links: [{ rel: "self", href: "/cars" }],
+    links: [{ rel: "self",method:"POST", href: "/cars" }],
   });
 });
 
@@ -41,8 +41,8 @@ router.get("/:carId", (req, res) => {
   res.status(200).json({
     car,
     links: [
-      { rel: "self", href: `/cars/${req.params.carId}` },
-      { rel: "features", href: `/cars/${req.params.carId}/features` },
+      { rel: "self",method:"GET", href: `/cars/${req.params.carId}` },
+      { rel: "features",method:"GET", href: `/cars/${req.params.carId}/features` },
     ],
   });
 });
@@ -66,7 +66,7 @@ router.put("/:carId", (req, res) => {
   data.cars[carIndex] = { ...data.cars[carIndex], ...updatedCar };
   res.status(200).json({
     message: "Car updated successfully",
-    links: [{ rel: "self", href: `/cars/${req.params.carId}` }],
+    links: [{ rel: "self",method:"PUT", href: `/cars/${req.params.carId}` }],
   });
 });
 
