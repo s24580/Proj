@@ -19,7 +19,7 @@ function loadData() {
   }
 }
 
-// Wczytanie danych przy starcie
+// Wczytanie danych
 let data = loadData();
 
 // Funkcja do zapisywania danych
@@ -139,11 +139,8 @@ export function createCar(call, callback) {
 
   // Ustalanie nowego ID
   newCar.id = data.cars.length > 0 ? data.cars[data.cars.length - 1].id + 1 : 1;
-
-  // Dodanie nowego samochodu do danych
   data.cars.push(newCar);
-
-  // Zapisywanie do JSON
+  // JSON
   saveData();
 
   callback(null, newCar);
@@ -153,7 +150,7 @@ export function updateCar(call, callback) {
   const carId = call.request.id;
   const updatedData = call.request.car;
 
-  // check updatedData.id nie jest nadpisywany
+  //updatedData.id nie jest nadpisywany
   delete updatedData.id;
 
   const index = data.cars.findIndex((car) => car.id === carId);
