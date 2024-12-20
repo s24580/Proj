@@ -28,7 +28,7 @@ const carClient = new proto.carservice.CarService(
   grpc.credentials.createInsecure()
 );
 
-// Przykładowe wywołanie GetCars
+// Przykładowe GetCars
 carClient.GetCars({}, (err, response) => {
   if (err) {
     console.error("Error fetching cars:", err);
@@ -37,7 +37,7 @@ carClient.GetCars({}, (err, response) => {
   }
 });
 
-// Przykładowe wywołanie GetCar
+// Przykładowe GetCar
 const carId = { id: 1 };
 
 carClient.GetCar(carId, (err, response) => {
@@ -48,7 +48,7 @@ carClient.GetCar(carId, (err, response) => {
   }
 });
 
-// Przykładowe wywołanie CreateCar
+// Przykładowe CreateCar
 const newCar = {
   vin: "1HGCM82633A004352",
   model: "Camaro",
@@ -66,7 +66,7 @@ carClient.CreateCar(newCar, (err, response) => {
   }
 });
 
-// Przykładowe wywołanie UpdateCar
+// Przykładowe UpdateCar
 const updatedCar = {
   vin: "1HGCM82633A004352",
   model: "Camaro SS",
@@ -89,7 +89,7 @@ carClient.UpdateCar(updateCarRequest, (err, response) => {
   }
 });
 
-// Przykładowe wywołanie DeleteCar
+// Przykładowe DeleteCar
 const carIdToDelete = { id: 1 };
 
 carClient.DeleteCar(carIdToDelete, (err, response) => {
