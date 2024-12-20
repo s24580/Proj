@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.status(200).json({
     dealerships: data.dealerships,
-    links: [{ rel: "self", href: "/dealerships" }],
+    links: [{ rel: "self",method:"GET", href: "/dealerships" }],
   });
 });
 
@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
   data.dealerships.push(newDealership);
   res.status(201).json({
     message: "Dealership created successfully",
-    links: [{ rel: "self", href: "/dealerships" }],
+    links: [{ rel: "self",method:"POST", href: "/dealerships" }],
   });
 });
 
@@ -42,8 +42,8 @@ router.get("/:dealershipId", (req, res) => {
   res.status(200).json({
     dealership,
     links: [
-      { rel: "self", href: `/dealerships/${req.params.dealershipId}` },
-      { rel: "cars", href: `/dealerships/${req.params.dealershipId}/cars` },
+      { rel: "self",method:"GET", href: `/dealerships/${req.params.dealershipId}` },
+      { rel: "cars",method:"GET", href: `/dealerships/${req.params.dealershipId}/cars` },
     ],
   });
 });
@@ -71,7 +71,7 @@ router.put("/:dealershipId", (req, res) => {
   };
   res.status(200).json({
     message: "Dealership updated successfully",
-    links: [{ rel: "self", href: `/dealerships/${req.params.dealershipId}` }],
+    links: [{ rel: "self",method:"PUT", href: `/dealerships/${req.params.dealershipId}` }],
   });
 });
 
