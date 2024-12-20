@@ -3,7 +3,7 @@ import data from "../data.json" assert { type: "json" };
 
 const router = express.Router();
 
-// Poziom 1: Lista wszystkich samochodów
+// Lista wszystkich samochodów
 router.get("/", (req, res) => {
   res.status(200).json({
     cars: data.cars,
