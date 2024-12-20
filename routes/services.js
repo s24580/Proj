@@ -7,7 +7,7 @@ const router = express.Router();
 router.get("/", (req, res) => {
   res.status(200).json({
     services: data.services,
-    links: [{ rel: "self", href: "/services" }],
+    links: [{ rel: "self",method:"GET", href: "/services" }],
   });
 });
 
@@ -25,7 +25,7 @@ router.post("/", (req, res) => {
   data.services.push(newService);
   res.status(201).json({
     message: "Service created successfully",
-    links: [{ rel: "self", href: "/services" }],
+    links: [{ rel: "self",method:"POST", href: "/services" }],
   });
 });
 
@@ -40,8 +40,8 @@ router.get("/:serviceId", (req, res) => {
   res.status(200).json({
     service,
     links: [
-      { rel: "self", href: `/services/${req.params.serviceId}` },
-      { rel: "cars", href: `/services/${req.params.serviceId}/cars` },
+      { rel: "self",method:"GET", href: `/services/${req.params.serviceId}` },
+      { rel: "cars",method:"GET", href: `/services/${req.params.serviceId}/cars` },
     ],
   });
 });
@@ -69,7 +69,7 @@ router.put("/:serviceId", (req, res) => {
   };
   res.status(200).json({
     message: "Service updated successfully",
-    links: [{ rel: "self", href: `/services/${req.params.serviceId}` }],
+    links: [{ rel: "self",method:"PUT", href: `/services/${req.params.serviceId}` }],
   });
 });
 
