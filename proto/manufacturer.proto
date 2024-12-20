@@ -14,7 +14,7 @@ message ManufacturerId {
 }
 
 message ManufacturerRequest {
-  // Dodaj pola filtrowania, jeśli są potrzebne
+  // pola filtrowania
 }
 
 message ManufacturerResponse {
