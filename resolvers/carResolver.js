@@ -1,14 +1,13 @@
-// resolvers/carResolver.js
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
 import * as grpc from "@grpc/grpc-js";
 
-// Definicja __dirname w ES Modules
+// Definicja __dirname 
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-// Funkcja do wczytywania danych z pliku JSON
+// Funkcja do danych z JSON
 function loadData() {
   const dataPath = path.resolve(__dirname, "../data.json");
   try {
@@ -154,7 +153,7 @@ export function updateCar(call, callback) {
   const carId = call.request.id;
   const updatedData = call.request.car;
 
-  // check `updatedData.id` nie jest nadpisywany
+  // check updatedData.id nie jest nadpisywany
   delete updatedData.id;
 
   const index = data.cars.findIndex((car) => car.id === carId);
