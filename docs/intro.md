@@ -1,47 +1,24 @@
 ---
-sidebar_position: 1
+title: Chevrolet API
 ---
 
-# Tutorial Intro
+# ChevroletAPI Overview
 
-Let's discover **Docusaurus in less than 5 minutes**.
+ChevroletAPI is a REST API designed to manage data related to cars, dealerships, and service operations. The API is divided into three main resources:
 
-## Getting Started
+- **Cars**
+- **Dealerships**
+- **Services**
 
-Get started by **creating a new site**.
+In the following sections, you will find detailed descriptions of the available endpoints, example requests, and required fields for request bodies.
 
-Or **try Docusaurus immediately** with **[docusaurus.new](https://docusaurus.new)**.
+> **Technologies used in this project:**
+>
+> - **Node.js** – API server
+> - **Express** – framework for routing
+> - **JSON** – format for data exchange
+> - _(optionally, add other technologies used in your project)_
 
-### What you'll need
-
-- [Node.js](https://nodejs.org/en/download/) version 18.0 or above:
-  - When installing Node.js, you are recommended to check all checkboxes related to dependencies.
-
-## Generate a new site
-
-Generate a new Docusaurus site using the **classic template**.
-
-The classic template will automatically be added to your project after you run the command:
-
-```bash
-npm init docusaurus@latest my-website classic
-```
-
-You can type this command into Command Prompt, Powershell, Terminal, or any other integrated terminal of your code editor.
-
-The command also installs all necessary dependencies you need to run Docusaurus.
-
-## Start your site
-
-Run the development server:
-
-```bash
-cd my-website
-npm run start
-```
-
-The `cd` command changes the directory you're working with. In order to work with your newly created Docusaurus site, you'll need to navigate the terminal there.
-
-The `npm run start` command builds your website locally and serves it through a development server, ready for you to view at http://localhost:3000/.
-
-Open `docs/intro.md` (this page) and edit some lines: the site **reloads automatically** and displays your changes.
+[Go to the Cars documentation](/docs/cars)  
+[Go to the Dealerships documentation](/docs/dealerships)  
+[Go to the Services documentation](/docs/services)
